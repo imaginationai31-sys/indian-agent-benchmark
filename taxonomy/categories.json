@@ -1,0 +1,14 @@
+{
+  "categories": [
+    {"id":"ecommerce","name":"E-commerce","target_tasks":500},
+    {"id":"travel","name":"Travel","target_tasks":500},
+    {"id":"finance","name":"Finance","target_tasks":500},
+    {"id":"food","name":"Food and Restaurant","target_tasks":500},
+    {"id":"education","name":"Education","target_tasks":500},
+    {"id":"government","name":"Government and Public Services","target_tasks":500},
+    {"id":"research","name":"Research","target_tasks":500},
+    {"id":"productivity","name":"Productivity","target_tasks":500},
+    {"id":"customer_support","name":"Customer Support","target_tasks":500},
+    {"id":"general_web","name":"General Web Tasks","target_tasks":500}
+  ]
+}
