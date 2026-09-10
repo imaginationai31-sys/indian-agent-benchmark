@@ -1,0 +1,8 @@
+{
+  "difficulty_levels": {
+    "easy": {"percentage":20,"description":"Simple task with few actions and no ambiguity."},
+    "medium": {"percentage":40,"description":"Multiple steps and basic constraints."},
+    "hard": {"percentage":30,"description":"Multiple constraints, comparisons and possible failure points."},
+    "expert": {"percentage":10,"description":"Long multi-step task requiring planning, reasoning and verification."}
+  }
+}
