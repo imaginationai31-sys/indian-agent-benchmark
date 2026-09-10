@@ -1,0 +1,11 @@
+{
+  "languages": [
+    {"code":"en","name":"English","target_tasks":2000},
+    {"code":"hi","name":"Hindi","target_tasks":800},
+    {"code":"hinglish","name":"Hinglish","target_tasks":800},
+    {"code":"ta","name":"Tamil","target_tasks":500},
+    {"code":"bn","name":"Bengali","target_tasks":400},
+    {"code":"te","name":"Telugu","target_tasks":250},
+    {"code":"mr","name":"Marathi","target_tasks":250}
+  ]
+}
