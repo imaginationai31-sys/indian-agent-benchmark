@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Benchmark Evaluation",
+  "type":"object",
+  "required":["task_id","score","breakdown","passed"],
+  "properties":{
+    "task_id":{"type":"string"},
+    "score":{"type":"number","minimum":0,"maximum":100},
+    "breakdown":{"type":"object","properties":{"task_success":{"type":"number"},"constraint_accuracy":{"type":"number"},"final_answer":{"type":"number"},"action_efficiency":{"type":"number"},"verification":{"type":"number"}}},
+    "expected_product_id":{"type":"string"},
+    "selected_product_id":{"type":["string","null"]},
+    "passed":{"type":"boolean"}
+  }
+}
