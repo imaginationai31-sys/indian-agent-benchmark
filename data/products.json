@@ -1,0 +1,23 @@
+[
+  {"id":"LAP-001","name":"Aster Pro 14","brand":"Aster","category":"laptop","price_inr":54990,"ram_gb":16,"storage_gb":512,"storage_type":"SSD","processor":"Core i5","battery_wh":54,"five_g":false},
+  {"id":"LAP-002","name":"NovaBook 15","brand":"Nova","category":"laptop","price_inr":57990,"ram_gb":16,"storage_gb":512,"storage_type":"SSD","processor":"Ryzen 5","battery_wh":58,"five_g":false},
+  {"id":"LAP-003","name":"PixelForge 14","brand":"PixelForge","category":"laptop","price_inr":59990,"ram_gb":16,"storage_gb":1024,"storage_type":"SSD","processor":"Core i5","battery_wh":60,"five_g":false},
+  {"id":"LAP-004","name":"ZenLite 14","brand":"ZenLite","category":"laptop","price_inr":48990,"ram_gb":8,"storage_gb":512,"storage_type":"SSD","processor":"Ryzen 5","battery_wh":52,"five_g":false},
+  {"id":"LAP-005","name":"OrbitBook 15","brand":"Orbit","category":"laptop","price_inr":52990,"ram_gb":16,"storage_gb":512,"storage_type":"SSD","processor":"Core i5","battery_wh":56,"five_g":false},
+  {"id":"LAP-006","name":"Titan 15","brand":"Titan","category":"laptop","price_inr":61990,"ram_gb":16,"storage_gb":512,"storage_type":"SSD","processor":"Core i7","battery_wh":70,"five_g":false},
+  {"id":"LAP-007","name":"Aster Air 13","brand":"Aster","category":"laptop","price_inr":44990,"ram_gb":8,"storage_gb":256,"storage_type":"SSD","processor":"Core i3","battery_wh":50,"five_g":false},
+  {"id":"LAP-008","name":"Nova Creator 16","brand":"Nova","category":"laptop","price_inr":74990,"ram_gb":16,"storage_gb":1024,"storage_type":"SSD","processor":"Core i7","battery_wh":80,"five_g":false},
+  {"id":"LAP-009","name":"ZenBook Go","brand":"ZenLite","category":"laptop","price_inr":55990,"ram_gb":16,"storage_gb":512,"storage_type":"SSD","processor":"Ryzen 5","battery_wh":62,"five_g":false},
+  {"id":"LAP-010","name":"Orbit Flex 14","brand":"Orbit","category":"laptop","price_inr":59990,"ram_gb":32,"storage_gb":512,"storage_type":"SSD","processor":"Core i5","battery_wh":64,"five_g":false},
+  {"id":"PHN-001","name":"Aster One 5G","brand":"Aster","category":"smartphone","price_inr":28990,"ram_gb":8,"storage_gb":256,"storage_type":"UFS","processor":"Octa X1","battery_wh":19,"battery_mah":5000,"five_g":true},
+  {"id":"PHN-002","name":"Nova Max 5G","brand":"Nova","category":"smartphone","price_inr":31990,"ram_gb":12,"storage_gb":256,"storage_type":"UFS","processor":"Octa X2","battery_wh":20,"battery_mah":5200,"five_g":true},
+  {"id":"PHN-003","name":"PixelForge X","brand":"PixelForge","category":"smartphone","price_inr":39990,"ram_gb":12,"storage_gb":256,"storage_type":"UFS","processor":"Octa X3","battery_wh":18,"battery_mah":4800,"five_g":true},
+  {"id":"PHN-004","name":"ZenLite 5G","brand":"ZenLite","category":"smartphone","price_inr":24990,"ram_gb":8,"storage_gb":128,"storage_type":"UFS","processor":"Octa X1","battery_wh":20,"battery_mah":5000,"five_g":true},
+  {"id":"PHN-005","name":"Orbit Ultra","brand":"Orbit","category":"smartphone","price_inr":35990,"ram_gb":12,"storage_gb":512,"storage_type":"UFS","processor":"Octa X2","battery_wh":21,"battery_mah":5400,"five_g":true},
+  {"id":"PHN-006","name":"Titan Edge","brand":"Titan","category":"smartphone","price_inr":42990,"ram_gb":16,"storage_gb":512,"storage_type":"UFS","processor":"Octa X4","battery_wh":22,"battery_mah":5500,"five_g":true},
+  {"id":"AUD-001","name":"Aster Buds","brand":"Aster","category":"audio","price_inr":2990,"ram_gb":0,"storage_gb":0,"storage_type":"N/A","processor":"N/A","battery_wh":3,"five_g":false},
+  {"id":"AUD-002","name":"Nova Sound Pro","brand":"Nova","category":"audio","price_inr":4990,"ram_gb":0,"storage_gb":0,"storage_type":"N/A","processor":"N/A","battery_wh":4,"five_g":false},
+  {"id":"AUD-003","name":"Orbit ANC","brand":"Orbit","category":"audio","price_inr":6990,"ram_gb":0,"storage_gb":0,"storage_type":"N/A","processor":"N/A","battery_wh":5,"five_g":false},
+  {"id":"MON-001","name":"PixelForge 27 QHD","brand":"PixelForge","category":"monitor","price_inr":22990,"ram_gb":0,"storage_gb":0,"storage_type":"N/A","processor":"N/A","battery_wh":0,"five_g":false},
+  {"id":"MON-002","name":"Aster Vision 24","brand":"Aster","category":"monitor","price_inr":12990,"ram_gb":0,"storage_gb":0,"storage_type":"N/A","processor":"N/A","battery_wh":0,"five_g":false}
+]
