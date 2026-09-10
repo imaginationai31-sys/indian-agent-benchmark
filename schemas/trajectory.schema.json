@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Agent Trajectory",
+  "type":"object",
+  "required":["task_id","actions","selected_product_id"],
+  "properties":{
+    "task_id":{"type":"string"},
+    "actions":{"type":"array","items":{"type":"object","required":["action","target"],"properties":{"action":{"type":"string"},"target":{"type":"string"},"value":{}}}},
+    "selected_product_id":{"type":"string"},
+    "verified":{"type":"boolean"}
+  }
+}
