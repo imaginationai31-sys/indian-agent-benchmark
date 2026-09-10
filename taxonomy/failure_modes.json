@@ -1,0 +1,5 @@
+{
+  "failure_modes": [
+    "wrong_search_query","wrong_filter","ignored_constraint","wrong_sort_order","premature_selection","incorrect_comparison","wrong_product","wrong_date","wrong_location","missing_information","incorrect_information","hallucinated_information","failed_navigation","repeated_action","unnecessary_action","action_order_error","calculation_error","incomplete_task","incorrect_final_answer","failure_to_verify"
+  ]
+}
