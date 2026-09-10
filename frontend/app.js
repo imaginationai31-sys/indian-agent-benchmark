@@ -1,3 +1,5 @@
+const API_BASE = 'https://indian-agent-benchmark-api.imaginationai31.workers.dev';
+
 let products = [];
 let tasks = [];
 let selectedProduct = null;
@@ -5,9 +7,17 @@ let actions = [];
 
 const $ = (id) => document.getElementById(id);
 
+async function api(path, options = {}) {
+  const response = await fetch(`${API_BASE}${path}`, options);
+  if (!response.ok) throw new Error(`API ${response.status}: ${response.statusText}`);
+  return response.json();
+}
+
 async function init() {
-  products = await fetch('/api/products').then(r => r.json());
-  tasks = await fetch('/api/tasks').then(r => r.json());
+  [products, tasks] = await Promise.all([
+    api('/api/products'),
+    api('/api/tasks')
+  ]);
   $('taskSelect').innerHTML = tasks.map(t => `<option value="${t.task_id}">${t.task_id} — ${t.language} / ${t.difficulty}</option>`).join('');
   $('taskSelect').addEventListener('change', resetTask);
   $('search').addEventListener('input', render);
@@ -72,13 +82,19 @@ function select(id) {
   $('selected').textContent = `${selectedProduct.name} — ₹${selectedProduct.price_inr.toLocaleString('en-IN')}`;
 }
 
-function evaluate() {
+async function evaluate() {
   if (!selectedProduct) return alert('Select a product first.');
-  fetch('/api/evaluate', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({task_id: currentTask().task_id, trajectory:{actions, selected_product_id:selectedProduct.id, verified:$('verified').checked}})})
-    .then(r => r.json()).then(result => {
-      const failures = result.failure_modes?.length ? `<p><b>Failure modes:</b> ${result.failure_modes.join(', ')}</p>` : '<p><b>Failure modes:</b> none</p>';
-      $('score').innerHTML = `<h3>Score: ${result.score}/100 ${result.passed ? '✓ Passed' : '✗ Needs improvement'}</h3>${failures}<pre>${JSON.stringify(result.breakdown, null, 2)}</pre>`;
+  try {
+    const result = await api('/api/evaluate', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({task_id: currentTask().task_id, trajectory:{actions, selected_product_id:selectedProduct.id, verified:$('verified').checked}})
     });
+    const failures = result.failure_modes?.length ? `<p><b>Failure modes:</b> ${result.failure_modes.join(', ')}</p>` : '<p><b>Failure modes:</b> none</p>';
+    $('score').innerHTML = `<h3>Score: ${result.score}/100 ${result.passed ? '✓ Passed' : '✗ Needs improvement'}</h3>${failures}<pre>${JSON.stringify(result.breakdown, null, 2)}</pre>`;
+  } catch (err) {
+    $('score').innerHTML = `<p class="error">Evaluation error: ${err.message}</p>`;
+  }
 }
 
 init().catch(err => { document.body.insertAdjacentHTML('beforeend', `<p class="error">Simulator error: ${err}</p>`); });
