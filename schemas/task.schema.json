@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Indian Multilingual Computer-Use Agent Task",
+  "type": "object",
+  "required": ["task_id","category","language","difficulty","user_request","environment","constraints","expected_result","verification","failure_modes"],
+  "properties": {
+    "task_id": {"type":"string"},
+    "category": {"type":"string"},
+    "subcategory": {"type":"string"},
+    "language": {"type":"string"},
+    "difficulty": {"enum":["easy","medium","hard","expert"]},
+    "user_request": {"type":"string"},
+    "environment": {"type":"string"},
+    "constraints": {"type":"array","items":{"type":"string"}},
+    "allowed_actions": {"type":"array","items":{"type":"string"}},
+    "expected_actions": {"type":"array","items":{"type":"object","required":["action"],"properties":{"action":{"type":"string"},"target":{"type":["string","null"]},"value":{"type":["string","number","boolean","null"]}}}},
+    "expected_result": {"type":"object"},
+    "failure_modes": {"type":"array","items":{"type":"string"}},
+    "verification": {"type":"object","required":["method"],"properties":{"method":{"type":"string"},"automated":{"type":"boolean"},"human_verified":{"type":"boolean"}}},
+    "quality_score": {"type":"number","minimum":0,"maximum":100}
+  }
+}
