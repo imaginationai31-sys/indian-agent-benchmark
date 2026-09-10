@@ -15,7 +15,7 @@ def load_json(name):
 
 
 PRODUCTS = load_json("products.json")
-TASKS = load_json("ecommerce_tasks.json")
+TASKS = load_json("ecommerce_tasks.json") + load_json("adversarial_tasks.json") + load_json("v02_tasks.json")
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -40,7 +40,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/tasks":
             return self.send_json(TASKS)
         if path == "/api/health":
-            return self.send_json({"ok": True, "version": "0.1"})
+            return self.send_json({"ok": True, "version": "0.2", "task_count": len(TASKS)})
         if path == "/" or path == "/index.html":
             return self.serve_file(FRONTEND / "index.html", "text/html")
         if path.startswith("/frontend/"):
