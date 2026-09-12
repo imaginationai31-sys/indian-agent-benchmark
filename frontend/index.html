@@ -3,30 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Indian Agent Benchmark — Simulator</title>
-  <link rel="stylesheet" href="/frontend/style.css">
+  <meta name="theme-color" content="#0b1020">
+  <title>Indian Agent Benchmark — Evaluation Lab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header><h1>Indian Agent Benchmark</h1><span>Simulator v0.1</span></header>
-  <main>
-    <section class="task-panel">
-      <label>Benchmark task <select id="taskSelect"></select></label>
-      <p id="taskText"></p>
-      <button id="resetBtn">Reset task</button>
-    </section>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">IA</div>
+        <div><div class="brand-name">Indian Agent Benchmark</div><div class="brand-subtitle">Multilingual Computer-Use Evaluation Lab</div></div>
+      </div>
+      <div class="topbar-meta"><span class="status-dot"></span><span>Simulator online</span><span class="version">v0.2</span></div>
+    </header>
 
-    <section class="controls">
-      <input id="search" placeholder="Search products…" aria-label="Search products">
-      <select id="category"><option value="">All categories</option><option>laptop</option><option>smartphone</option><option>audio</option><option>monitor</option></select>
-      <input id="maxPrice" type="number" min="0" placeholder="Max price ₹">
-      <select id="sort"><option value="relevance">Sort: relevance</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option></select>
-    </section>
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">BENCHMARK SIMULATOR</div>
+          <h1>Evaluate agent decisions in realistic Indian workflows.</h1>
+          <p>Test constraint following, product selection, verification and action efficiency across a multilingual benchmark.</p>
+        </div>
+        <div class="hero-stats"><div><strong id="taskCount">—</strong><span>Tasks loaded</span></div><div><strong id="productCount">—</strong><span>Catalog items</span></div></div>
+      </section>
 
-    <section class="layout">
-      <div><div id="products" class="grid"></div></div>
-      <aside><h2>Action trajectory</h2><ol id="actions"></ol><div id="selected">No product selected</div><label class="check"><input id="verified" type="checkbox"> Verified final details</label><button id="evaluate">Run evaluation</button><div id="score"></div></aside>
-    </section>
-  </main>
-  <script src="/frontend/app.js"></script>
+      <section class="task-card">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-row">
+          <div class="task-select-wrap"><select id="taskSelect" aria-label="Benchmark task"></select><span class="select-arrow">⌄</span></div>
+          <button id="resetBtn" class="ghost-btn">↻ Reset</button>
+        </div>
+        <div class="request-box"><span class="request-icon">⌁</span><p id="taskText">Loading benchmark task…</p></div>
+        <div class="task-meta" id="taskMeta"></div>
+      </section>
+
+      <section class="workspace">
+        <div class="catalog-panel">
+          <div class="panel-heading"><div><div class="section-label">SYNTHETIC CATALOG</div><h2>Find the best match</h2></div><span id="resultCount" class="result-count">0 results</span></div>
+          <div class="filters">
+            <div class="search-box"><span>⌕</span><input id="search" placeholder="Search products, brands…" aria-label="Search products"></div>
+            <select id="category" aria-label="Category"><option value="">All categories</option><option>laptop</option><option>smartphone</option><option>audio</option><option>monitor</option></select>
+            <div class="price-box"><span>₹</span><input id="maxPrice" type="number" min="0" placeholder="Max price" aria-label="Maximum price"></div>
+            <select id="sort" aria-label="Sort products"><option value="">Relevance</option><option value="price_asc">Price: low → high</option><option value="price_desc">Price: high → low</option></select>
+          </div>
+          <div id="products" class="grid"></div>
+        </div>
+
+        <aside class="trajectory-panel">
+          <div class="panel-heading"><div><div class="section-label">AGENT TRAJECTORY</div><h2>Decision trace</h2></div><span class="live-badge">LIVE</span></div>
+          <div class="trace" id="actions"><div class="empty-trace">Actions will appear here as you interact with the catalog.</div></div>
+          <div class="selected-card" id="selected"><span class="selected-label">SELECTED PRODUCT</span><strong>No product selected</strong><small>Choose a catalog item to continue</small></div>
+          <label class="verify-row"><input id="verified" type="checkbox"><span><strong>Verify final details</strong><small>Confirm the selected item satisfies the task.</small></span></label>
+          <button id="evaluate" class="evaluate-btn">Run evaluation <span>→</span></button>
+          <div id="score"></div>
+        </aside>
+      </section>
+
+      <footer><span>Indian Multilingual Computer-Use Agent Benchmark</span><span>Synthetic data · Evaluation only</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
